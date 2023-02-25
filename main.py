@@ -1,10 +1,25 @@
 from typing import Union
 from fastapi import FastAPI, File, UploadFile
+from fastapi.middleware.cors import CORSMiddleware
+
 import cv2
 import numpy as np
 import onnxruntime as ort
 
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=['*',
+                   # 'http://localhost.tiangolo.com',
+                   # # 'https://localhost.tiangolo.com',
+                   # 'http://localhost',
+                   # 'http://localhost:8080',
+                   ],
+    allow_credentials=True,
+    allow_methods=['*'],
+    allow_headers=['*'],
+)
 
 IMAGE = cv2.imread('image.jpg')
 SESSION = ort.InferenceSession(
