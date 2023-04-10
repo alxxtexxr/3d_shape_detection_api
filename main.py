@@ -1,4 +1,4 @@
-from typing import Union
+import uvicorn
 from fastapi import FastAPI, File, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
 
@@ -122,3 +122,6 @@ async def create_detect(file: UploadFile = File(...)):
     im = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
     predictions = detect(im)
     return predictions
+
+if __name__ == '__main__':
+    uvicorn.run('main:app', host='0.0.0.0', port=8000, reload=True)
