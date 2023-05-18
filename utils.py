@@ -34,7 +34,7 @@ def letterbox(im, new_shape=(640, 640), color=(114, 114, 114), auto=True, scaleu
   return im, r, (dw, dh)
 
 
-def detect(session, im):
+def detect_objects(session, im):
     img = cv2.cvtColor(im, cv2.COLOR_BGR2RGB)
 
     image = img.copy()
