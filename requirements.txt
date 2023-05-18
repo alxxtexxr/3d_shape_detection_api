@@ -3,5 +3,5 @@ uvicorn==0.22.0
 python-multipart==0.0.5
 opencv-python-headless==4.3.0.38
 numpy==1.24.3
-onnxruntime1.8.0
+onnxruntime==1.8.0
 websockets==11.0.3

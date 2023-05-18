@@ -1,0 +1,7 @@
+Dockerfile
+.dockerignore
+.git
+.gitkeep
+README.md
+vercel.json
+__pycache__/

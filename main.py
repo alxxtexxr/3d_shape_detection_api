@@ -32,7 +32,7 @@ def root():
 @app.get('/detect/test')
 def test_detect():
   im = cv2.imread('image.jpg')
-  predictions = detect(session, im)
+  predictions = detect_objects(session, im)
   return predictions
 
 @app.post('/detect')
